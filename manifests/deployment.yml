@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: coreapp2 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: coreapp2 
+    spec:
+      containers:
+        - name: coreapp2 
+          image: claimproc001.azurecr.io/coreapp2
+          ports:
+          - containerPort: 80

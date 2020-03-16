@@ -15,7 +15,7 @@ variables:
   imageRepository: 'coreapp2'
   containerRegistry: 'claimproc001.azurecr.io'
   dockerfilePath: '**/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: '$(Build.BuildNumber)'
   imagePullSecret: 'claimproc00112133625-auth'
 
   # Agent VM image name
@@ -43,7 +43,7 @@ stages:
         tags: |
           $(tag)
           
-    - upload: manifests
+    - publish: manifests
       artifact: manifests
 
 - stage: Deploy

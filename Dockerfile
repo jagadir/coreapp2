@@ -14,7 +14,8 @@ RUN dotnet build "coreapp2.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "coreapp2.csproj" -c Release -o /app/publish
 
+
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "coreapp2.dll"]
+ENTRYPOINT ["dotnet", "coreapp2.dll"] 

@@ -21,7 +21,7 @@ namespace coreapp2
         {
             Configuration = configuration;
         }
-//test comments
+//test comments testing again
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
